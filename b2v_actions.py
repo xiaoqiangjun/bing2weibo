@@ -19,7 +19,7 @@ def post_weibo(dicts):
     url = "https://api.weibo.com/2/statuses/share.json"
     payload = {
         "access_token":
-        '2.00M_cGZGr37H4Eefabde1e10crEAoD',
+        os.environ['WEIBO_TOKEN'],
         "status":
         dicts['copyright'] + '\n我的主页： https://www.weibo.com/u/6015545982' +
         ' \n图片地址： ' + dicts['url']
@@ -33,11 +33,11 @@ def save_log(dicts):
     data = dicts['date'] + ',' + dicts['id'] + ',' + dicts[
         'url'] + ',' + dicts['copyright'] + '\n'
     if not os.path.exists('log.csv'):
-        with open('log.csv', 'w', encoding='gb18030') as log_file:
+        with open('log.csv', 'w', encoding='utf8') as log_file:
             log_file.write('date,id,url,copyright\n')
             log_file.write(data)
     else:
-        with open('log.csv', 'a', encoding='gb18030') as log_file:
+        with open('log.csv', 'a', encoding='utf8') as log_file:
             log_file.write(data)
 
 
