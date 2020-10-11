@@ -8,7 +8,7 @@ class Settings():
         self.bing_domian = 'https://cn.bing.com'
 
         # 图片保存地址
-        self.save_path = 'F:/bingpic/'
+        self.save_path = ''
         # 是否保存日志，其中包括时间、图片id、图片地址与描述信息
         self.save_log = True
         # 日志地址与名称
