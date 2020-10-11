@@ -4,7 +4,7 @@ import os
 
 
 def get_bing():
-    url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'
+    url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&nc=1602431102250&redig=BAFE8347091242E0B11B2E013B39D731'
     response = requests.get(url).json()['images'][0]
     dicts = {}
     dicts['date'] = response['enddate']
