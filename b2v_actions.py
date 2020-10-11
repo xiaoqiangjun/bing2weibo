@@ -19,13 +19,13 @@ def post_weibo(dicts):
     url = "https://api.weibo.com/2/statuses/share.json"
     payload = {
         "access_token":
-        os.environ['WEIBO_TOKEN'],
+        '2.00M_cGZGr37H4Eefabde1e10crEAoD',
         "status":
         dicts['copyright'] + '\n我的主页： https://www.weibo.com/u/6015545982' +
-        '\n图片地址： ' + dicts['url']
+        ' \n图片地址： ' + dicts['url']
     }
     files = requests.get(dicts['url']).content
-    r = requests.post(url, data=payload, files=files)
+    r = requests.post(url, data=payload, files={'pic': files})
     return r.json()
 
 
