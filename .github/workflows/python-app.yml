@@ -1,6 +1,7 @@
 name: Python application
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
 
@@ -25,16 +26,17 @@ jobs:
       env:
         WEIBO_TOKEN: ${{secrets.WEIBO_TOKEN}}
       run: |
+        git config --global user.email super_gxq@qq.com
+        git config --global user.name xianqiangjun
+        git init
         python b2v_actions.py
     
     - name: commit
       run: |
-        git config --global user.email super_gxq@qq.com
-        git config --global user.name xianqiangjun
         git add .
-        git commit -m "update log" -a
+        git commit -m "update log"
 
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

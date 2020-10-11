@@ -7,13 +7,16 @@ bing2weibo —— 自动获取必应每日图片并发布到微博
 - 支持获取高清（UHD）图片
 - 自动发布图片与描述信息到微博  
 
+## 更新！
+重写了[`bing2weibo.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/bing2weibo.py)，现在可以直接使用更加简洁的[`b2v_actions.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/b2v_actions.py)，并且支持**Github actions自动执行**。
+
 ---  
 ## 一、安装要求  
 ```
     python 3.x
     requests
 ```
-项目在本机`pyhton3.8.5`以及`requests2.24.0`测试通过。
+项目在本机![](https://img.shields.io/badge/python-3.8.5-green)以及![](https://img.shields.io/badge/requests-2.24.0-orange)测试通过。
   
   
 ## 二、使用方法
@@ -59,7 +62,7 @@ print r.text
 > GitHub Actions 是 GitHub 的持续集成服务，于2018年10月推出。持续集成由很多操作组成，比如抓取代码、运行测试、登录远程服务器，发布到第三方服务等等。GitHub 把这些操作就称为 actions。（截取自[GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)）    
 
 呃，其实我也不太懂，简单地说，大概是Github提供一个临时的环境，你可以自由配置，并且能够执行一系列操作，比如编译代码、运行测试等等，总之就相当于一个临时的服务器，你可以干任何你想干的事。并且，actions可以方便地复用，因此短短几行代码，就可以配置出很强大的功能。  
-由于Github actions是临时的，因此原先的代码中本地保存图片和日志会被擦除，所以我干脆重写了[`bing2weibo.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/bing2weibo.py)，在新的`b2v_actions.py`中，~~删除了所有保存相关操作~~（尝试利用pull/push保存日志），并合并[`settings.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/settings.py)，尽量简洁地完成原先的操作。
+由于Github actions是临时的，因此原先的代码中本地保存图片和日志会被擦除，所以我干脆重写了[`bing2weibo.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/bing2weibo.py)，在新的[`b2v_actions.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/b2v_actions.py)中，~~删除了所有保存相关操作~~（尝试利用pull/push保存日志），并合并[`settings.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/settings.py)，尽量简洁地完成原先的操作。
 
 ## To-Do List
 - [x] 每天定时发布
@@ -67,4 +70,4 @@ print r.text
 - [x] 利用Github保存日志
 
 ## License
-GPL
+![GPL](https://img.shields.io/badge/license-GPL-blue 'GPL')
