@@ -1,5 +1,6 @@
 import json
 import re
+import os
 from pathlib import Path
 from time import sleep, strftime, localtime
 
@@ -137,6 +138,7 @@ def main():
     '''主函数'''
     # 定义设置
     my_settings = Settings()
+    my_settings.access_token = os.environ['WEIBO_TOKEN']
 
     # 获取bing图片关键信息
     main_dicts = get_bing_dicts(my_settings)

@@ -23,7 +23,7 @@ class Settings():
         # 微博安全地址，注意需与微博开发平台设置相同
         self.myurl = 'https://www.weibo.com/u/6015545982'
         # 微博口令
-        self.access_token = "xiaoqiangjun"
+        self.access_token = ""
 
 
 if __name__ == "__main__":
