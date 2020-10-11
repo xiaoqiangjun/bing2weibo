@@ -22,7 +22,7 @@ def post_weibo(dicts):
         os.environ['WEIBO_TOKEN'],
         "status":
         dicts['copyright'] + '\n我的主页： https://www.weibo.com/u/6015545982' +
-        '\n图片地址： ' + dictd['url']
+        '\n图片地址： ' + dicts['url']
     }
     files = requests.get(dicts['url']).content
     r = requests.post(url, data=payload, files=files)
