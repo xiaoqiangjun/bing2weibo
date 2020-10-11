@@ -3,7 +3,7 @@ name: Python application
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '59 23 * * *'
 
 jobs:
   run_bing2weibo:
@@ -40,3 +40,4 @@ jobs:
       uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
