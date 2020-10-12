@@ -3,7 +3,7 @@ name: Python application
 on:
   workflow_dispatch:
   schedule:
-    - cron: 1 0 * * *
+    - cron: '43 2 * * *
 
 jobs:
   run_bing2weibo:
