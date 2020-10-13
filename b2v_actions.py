@@ -18,7 +18,7 @@ def wait_on_time(wkt):
     now_time = time()
     print(strftime('now its: UTC %Y-%m-%d %H:%M:%S', gmtime(time())))
     remain_time = work_time - now_time
-    if remain_time < 0:
+    if remain_time < 0 or remain_time > 3600:
         print('OUT OF WORK TIME!')
         return None
     while remain_time > 0:
@@ -50,7 +50,7 @@ def post_weibo(dicts):
         "access_token":
         os.environ['WEIBO_TOKEN'],
         "status":
-        dicts['copyright'] + '\n我的主页： http://www.weibo.com/u/6015545982' +
+        dicts['copyright'] + '\n我的主页： https://www.weibo.com/u/6015545982' +
         ' \n图片地址： ' + dicts['url']
     }
     files = requests.get(dicts['url']).content
@@ -72,7 +72,7 @@ def save_log(dicts):
 
 if __name__ == "__main__":
     # 提前启动，等待整点，参数为实际想要的UTC时间
-    wait_on_time((0,0,0))
+    wait_on_time((15,0,0))
     # 解析bing内容
     dicts = get_bing()
     # 发布微博
