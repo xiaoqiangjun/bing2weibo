@@ -33,7 +33,7 @@ def wait_on_time(wkt):
 
 
 def get_bing():
-    url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&nc=1602431102250&redig=BAFE8347091242E0B11B2E013B39D731'
+    url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
     response = requests.get(url).json()['images'][0]
     dicts = {}
     dicts['date'] = response['enddate']
@@ -50,7 +50,7 @@ def post_weibo(dicts):
         "access_token":
         os.environ['WEIBO_TOKEN'],
         "status":
-        dicts['copyright'] + '\n我的主页： https://www.weibo.com/u/6015545982' +
+        dicts['copyright'] + '\n我的主页： http://www.weibo.com/u/6015545982' +
         ' \n图片地址： ' + dicts['url']
     }
     files = requests.get(dicts['url']).content
