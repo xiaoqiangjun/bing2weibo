@@ -22,6 +22,12 @@ def wait_on_time(wkt):
         print('OUT OF WORK TIME!')
         return None
     while remain_time > 0:
+        if remain_time > 100:
+            sleep(77)
+            print('long time sleep...')
+            print('time remians:', '{:0>2d}'.format(round(remain_time)), 's')
+            remain_time = work_time - time()
+            continue
         print('time remians:', '{:0>2d}'.format(round(remain_time)), 's',end='')
         sleep(1)
         print("\r",end='',flush = True)
@@ -72,7 +78,7 @@ def save_log(dicts):
 
 if __name__ == "__main__":
     # 提前启动，等待整点，参数为实际想要的UTC时间
-    wait_on_time((15,0,0))
+    wait_on_time((0,0,0))
     # 解析bing内容
     dicts = get_bing()
     # 发布微博
