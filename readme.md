@@ -8,7 +8,10 @@ bing2weibo —— 自动获取必应每日图片并发布到微博
 - 自动发布图片与描述信息到微博  
 
 ## 更新！
-重写了[`bing2weibo.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/bing2weibo.py)，现在可以直接使用更加简洁的[`b2v_actions.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/b2v_actions.py)，并且支持**Github actions自动执行**。
+重写了[`bing2weibo.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/bing2weibo.py)，现在可以直接使用更加简洁的[`b2v_actions.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/b2v_actions.py)，并且支持**Github actions自动执行**。  
+如果你也想要自动运行，只需要fork本项目，然后开启Actions，并在**actions**的设置中添加`secret`，name为`WEIBO_TOKEN`，值为下面[使用方法](#二、使用方法)第9点中获取到的`access_token`。
+### 奇怪的更新（20201013）
+由于Github actions启动有延时，利用`schedule`参数控制通常会晚10-15分钟，因此在[`b2v_actions.py`](https://github.com/xiaoqiangjun/bing2weibo/blob/main/b2v_actions.py)添加了一个~~垃圾的~~延时函数，并且设置提前30分钟触发自动运行，这样来达到**准时发微博**的~~无聊~~需求。
 
 ---  
 ## 一、安装要求  

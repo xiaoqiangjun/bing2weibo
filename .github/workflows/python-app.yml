@@ -34,7 +34,7 @@ jobs:
     - name: commit
       run: |
         git add .
-        git commit -m "update log"
+        git commit -m "update log.csv"
 
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
