@@ -1,6 +1,35 @@
 import requests
 import re
 import os
+from calendar import timegm
+from time import *
+
+
+def wait_on_time(wkt):
+    wkt_list = list(gmtime(time()))
+    if wkt[0] == 0 and wkt[1] == 0:
+        wkt_list = list(gmtime(time()+86400))
+    wkt_list[3] = wkt[0]
+    wkt_list[4] = wkt[1]
+    wkt_list[5] = wkt[2]
+    
+    work_time = timegm(tuple(wkt_list))
+    print(strftime('work at: UTC %Y-%m-%d %H:%M:%S', tuple(wkt_list)))
+    now_time = time()
+    print(strftime('now its: UTC %Y-%m-%d %H:%M:%S', gmtime(time())))
+    remain_time = work_time - now_time
+    if remain_time < 0:
+        print('OUT OF WORK TIME!')
+        return None
+    while remain_time > 0:
+        print('time remians:', '{:0>2d}'.format(round(remain_time)), 's',end='')
+        sleep(1)
+        print("\r",end='',flush = True)
+        remain_time = work_time - time()
+ 
+    print('*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*')
+    print(strftime('WORK STARTING SUCCESSFULLY AT UTC %Y-%m-%d %H:%M:%S', gmtime(time())))
+    print('*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*')
 
 
 def get_bing():
@@ -42,6 +71,8 @@ def save_log(dicts):
 
 
 if __name__ == "__main__":
+    # 提前启动，等待整点，参数为实际想要的UTC时间
+    wait_on_time((0,0,0))
     # 解析bing内容
     dicts = get_bing()
     # 发布微博
