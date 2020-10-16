@@ -56,7 +56,7 @@ def post_weibo(dicts):
         "access_token":
         os.environ['WEIBO_TOKEN'],
         "status":
-        dicts['copyright'] + '\n我的主页： https://www.weibo.com/u/6015545982' +
+        dicts['copyright'] + '\n我的主页： http://t.cn/A6bpoKJC' +
         ' \n图片地址： ' + dicts['url']
     }
     files = requests.get(dicts['url']).content
@@ -78,12 +78,13 @@ def save_log(dicts):
 
 if __name__ == "__main__":
     # 提前启动，等待整点，参数为实际想要的UTC时间
-    wait_on_time((0,0,0))
+    wait_on_time((13,25,20))
     # 解析bing内容
     dicts = get_bing()
     # 发布微博
     response = post_weibo(dicts)
     # 结果保存与输出
+    print(response)
     if 'created_at' in response:
-        save_log(dicts)
+        #save_log(dicts)
         print('Success! Created at: ' + str(response['created_at']))
