@@ -6,7 +6,7 @@
  - 定时微博
  - ……  
 
-更多功能请关注[weibogugubot](https://github.com/xiaoqiangjun/gugubot)，以及微博账号[咕咕bot](https://weibo.com/gugubot)。
+更多功能请关注[weibogugubot](https://github.com/xiaoqiangjun/gugubot)，以及微博账号[鸽鸽bot](https://weibo.com/gugubot)。
 
 ---
 
@@ -81,7 +81,7 @@ print r.text
 
 ## To-Do List
 - [x] 每天定时发布
-- [x] ~~微博中加入每日一句~~（在[weibogugubot]()中实现)
+- [x] ~~微博中加入每日一句~~（在[weibogugubot](https://github.com/xiaoqiangjun/gugubot)中实现)
 - [x] 利用Github保存日志
 
 ## License
