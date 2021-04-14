@@ -1,12 +1,12 @@
 ## `2021/04/14更新` 
-由于微博分享API发布微博存在诸多限制，例如无法发送超过140字符的微博，本仓库方法不是非常优雅，新的发布方式在[weibogugubot]('https://github.com/xiaoqiangjun/gugubot')中实现，采用模拟登录的方式，增加了更多的实用功能：
+由于微博分享API发布微博存在诸多限制，例如无法发送超过140字符的微博，本仓库方法不是非常优雅，新的发布方式在[weibogugubot](https://github.com/xiaoqiangjun/gugubot)中实现，采用模拟登录的方式，增加了更多的实用功能：
  - 定时发布必应图片
  - 发布文本微博
  - 发布（多）图片微博
  - 定时微博
  - ……  
 
-更多功能请关注[weibogugubot]('https://github.com/xiaoqiangjun/gugubot')，以及微博账号[咕咕bot]('https://weibo.com/gugubot')。
+更多功能请关注[weibogugubot](https://github.com/xiaoqiangjun/gugubot)，以及微博账号[咕咕bot](https://weibo.com/gugubot)。
 
 ---
 
