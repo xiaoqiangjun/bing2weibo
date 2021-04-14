@@ -1,3 +1,15 @@
+## `2021/04/14更新` 
+由于微博分享API发布微博存在诸多限制，例如无法发送超过140字符的微博，本仓库方法不是非常优雅，新的发布方式在[weibogugubot]('https://github.com/xiaoqiangjun/gugubot')中实现，采用模拟登录的方式，增加了更多的实用功能：
+ - 定时发布必应图片
+ - 发布文本微博
+ - 发布（多）图片微博
+ - 定时微博
+ - ……  
+
+更多功能请关注[weibogugubot]('https://github.com/xiaoqiangjun/gugubot')，以及微博账号[咕咕bot]('https://weibo.com/gugubot')。
+
+---
+
 bing2weibo —— 自动获取必应每日图片并发布到微博
 ===========
 本项目基于`python3.x`与`requests`模块。利于Bing与微博的原生API实现了下面的功能：  
@@ -69,7 +81,7 @@ print r.text
 
 ## To-Do List
 - [x] 每天定时发布
-- [x] ~~微博中加入每日一句~~（在[weibogugubot]( '还没做呢')中实现)
+- [x] ~~微博中加入每日一句~~（在[weibogugubot]()中实现)
 - [x] 利用Github保存日志
 
 ## License
